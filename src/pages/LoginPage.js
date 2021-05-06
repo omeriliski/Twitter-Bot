@@ -12,7 +12,7 @@ const LoginPage=(props)=>{
             <View style={styles.logoContainer}>
                 <Logo/>
             </View>
-            <RegisterModal onPress={()=>props.navigation.navigate("Home")}/>
+            <RegisterModal onPress={()=>props.navigation.navigate("TabPages")}/>
             <View style={styles.loginButtonsContainer}>
                 <StyledButton text="Register" onPress={async() =>{ 
                     await consumer?.setActiveModal("register");

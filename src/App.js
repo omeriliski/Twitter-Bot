@@ -3,12 +3,10 @@ import React,{createContext, useState} from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import TabPages from "./pages/TabPages"; 
 import LoginPage from "./pages/LoginPage";
-import Home from "./pages/Home";
-import Settings from "./pages/Settings";
-import Statistics from "./pages/Statistics";
 
-const Stack = createStackNavigator();   
+const Stack = createStackNavigator(); 
 export const Context = createContext();
 
 function App() {
@@ -24,9 +22,7 @@ function App() {
           }}
           >
           <Stack.Screen name="LoginPage" component={LoginPage}/>
-          <Stack.Screen name="Home" component={Home}/>
-          <Stack.Screen name="Settings" component={Settings}/>
-          <Stack.Screen name="Statistics" component={Statistics}/>
+          <Stack.Screen name="TabPages" component={TabPages}/>
         </Stack.Navigator>
       </NavigationContainer>
     </Context.Provider>
