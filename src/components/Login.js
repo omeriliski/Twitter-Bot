@@ -1,23 +1,22 @@
 import React, {useContext} from "react";
-import {Text, View, TextInput,StyleSheet, TouchableOpacity } from "react-native";
+import {Text, View, TextInput,StyleSheet, TouchableOpacity, Dimensions } from "react-native";
 import { Context } from "../App";
-import StyledButton from "../components/StyledButton"; 
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { Input } from 'react-native-elements';
 
 const Login=(props)=>{
     const consumer=useContext(Context);
     return(
         <View>
             <View style={styles.textInputs}>
-              <TextInput
-                placeholder="Email"
-                keyboardType="email-address"
-                />
+                <Input
+                  placeholder='email@address.com'
+                  keyboardType="email-address"
+                  leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
+                /> 
             </View>
             <View style={styles.textInputs}> 
-              <TextInput
-                placeholder="Password"
-                secureTextEntry={true}
-                />
+              <Input placeholder="Password" secureTextEntry={true} />
             </View>
             <View style={styles.signInButton}>
               <TouchableOpacity 
@@ -35,9 +34,8 @@ const Login=(props)=>{
 
 const styles=StyleSheet.create({
     textInputs:{
-        width:200,
+        width:Dimensions.get("window").width*.7,
         paddingLeft:5,
-        borderRadius:5,
         backgroundColor:'#e3f2fd',
         marginBottom:10
       },

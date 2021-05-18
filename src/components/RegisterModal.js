@@ -1,7 +1,6 @@
 import React, {useContext} from "react";
-import { Alert, Modal, StyleSheet, Text, View, TextInput, Button, Touchable, TouchableOpacity } from "react-native";
+import { Alert, Modal, StyleSheet, Text, View} from "react-native";
 import { Context } from "../App";
-import StyledButton from "./StyledButton"; 
 import Register from "./Register";
 import Login from "./Login";
 
