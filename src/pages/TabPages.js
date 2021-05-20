@@ -4,14 +4,15 @@ import {createBottomTabNavigator} from "@react-navigation/bottom-tabs";
 import Home from "./Home";
 import Settings from "./Settings";
 import Statistics from "./Statistics";
+import { Tab } from 'react-native-elements';
 
 const TabPages=()=>{
     const Tab = createBottomTabNavigator();  
     return(
         <Tab.Navigator>
-            <Tab.Screen name="Home" component={Home}></Tab.Screen>
-            <Tab.Screen name="Statistics" component={Statistics}></Tab.Screen>
-            <Tab.Screen name="Settings" component={Settings}></Tab.Screen>
+            <Tab.Screen name="Home" component={Home} />
+            <Tab.Screen name="Statistics" component={Statistics}/>
+            <Tab.Screen name="Settings" component={Settings}/>
         </Tab.Navigator>
     )
 }
