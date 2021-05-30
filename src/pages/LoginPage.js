@@ -7,6 +7,7 @@ import { Button } from 'react-native-elements';
 
 const LoginPage=(props)=>{
     const consumer = useContext(Context)
+
     return(
         <View style={styles.container}>
             <View style={styles.logoContainer}>
