@@ -9,11 +9,11 @@ const comments = [{
     comment: "That's a very good Application, gratuliatiton!",
   },
 ];
-const Home = () => {
+const How = () => {
   return (
     <ScrollView>
       <Text h4 h4Style={styles.header}>
-        Home Page
+        How it works
       </Text>
       <Card>
         <Card.Title>HOW IT WORKS</Card.Title>
@@ -66,4 +66,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default How;

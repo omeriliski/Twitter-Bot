@@ -4,7 +4,7 @@ import { Context } from "../App";
 import Register from "./Register";
 import Login from "./Login";
 
-const RegisterModal = (props) => {
+const LoginRegisterModal = (props) => {
   const consumer=useContext(Context);
   return (
     <View style={styles.centeredView}>
@@ -67,4 +67,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default RegisterModal;
+export default LoginRegisterModal;

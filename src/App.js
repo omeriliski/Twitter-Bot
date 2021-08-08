@@ -3,7 +3,7 @@ import {View, Text} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import TabPages from './pages/TabPages';
-import LoginPage from './pages/LoginPage';
+import LoginRegisterPage from './pages/LoginRegisterPage';
 
 const Stack = createStackNavigator();
 export const Context = createContext();
@@ -25,7 +25,7 @@ function App() {
           screenOptions={{
             headerShown: false,
           }}>
-          <Stack.Screen name="LoginPage" component={LoginPage} />
+          <Stack.Screen name="LoginRegisterPage" component={LoginRegisterPage} />
           <Stack.Screen name="TabPages" component={TabPages} />
         </Stack.Navigator>
       </NavigationContainer>

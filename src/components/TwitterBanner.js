@@ -1,9 +1,9 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const TwitterBanner=()=>{
-    return(
-        <View style={styles.container}>
+const TwitterBanner = () => {
+    return (
+    <View style={styles.container}>
       <Text style={styles.header}>TWITTER BOT</Text>
     </View>
     )
