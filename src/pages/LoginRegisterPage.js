@@ -15,25 +15,29 @@ const LoginRegisterPage = props => {
       </View>
       <LoginRegisterModal onPress={() => props.navigation.navigate('TabPages')}/>
       <View style={styles.loginButtonsContainer}>
-        <Button
-          title="Register"
-          onPress={async () => {
-            await consumer?.setActiveModal('register');
-            await consumer?.setRegisterModalVisible(true);
-            //console.log('activeModal', consumer?.activeModal);
-            //console.log('registerModalVisible', consumer?.registerModalVisible);
-          }}
-        />
-        <Button
-          title="Login"
-          onPress={async () => {
-            await consumer?.setActiveModal('login');
-            await consumer?.setRegisterModalVisible(true);
-            //console.log('login page props', props);
-            //console.log('activeModal', consumer?.activeModal);
-            //console.log('registerModalVisible', consumer?.registerModalVisible);
-          }}
-        />
+        <View>
+          <Button
+            title="Register"
+            onPress={async () => {
+              await consumer?.setActiveModal('register');
+              await consumer?.setRegisterModalVisible(true);
+              //console.log('activeModal', consumer?.activeModal);
+              //console.log('registerModalVisible', consumer?.registerModalVisible);
+            }}
+          />
+        </View>
+        <View style={styles.loginButtonContainer}>
+          <Button
+            title="Login"
+            onPress={async () => {
+              await consumer?.setActiveModal('login');
+              await consumer?.setRegisterModalVisible(true);
+              //console.log('login page props', props);
+              //console.log('activeModal', consumer?.activeModal);
+              //console.log('registerModalVisible', consumer?.registerModalVisible);
+            }}
+            />
+          </View>
       </View>
     </View>
   );
@@ -54,11 +58,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  loginButtons: {
-    backgroundColor: '#1DA1F2',
-    marginBottom: 10,
-    padding: 10,
-    borderRadius: 10,
+  loginButtonContainer: {
+    marginTop: 10,
   },
   loginText: {
     color: 'white',

@@ -27,12 +27,12 @@ const Login = props => {
   
   const getProfile = ()=>{
       console.log("get profile");
-      const response = privateFetchData("http://192.168.0.123:4747/api/user/profile");
+      const response = privateFetchData("http://192.168.0.123:5000/api/user/profile");
   }
 
   const login = async values => {
     await axios
-      .post("http://192.168.0.123:4747/api/user/login", values)
+      .post("http://192.168.0.123:5000/api/user/login", values)
       .then(response => {
         //consumer.setCurrentUser(values);
         //tele kaydet
