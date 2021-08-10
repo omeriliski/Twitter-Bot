@@ -11,14 +11,14 @@ export const Context = createContext();
 function App() {
   const [registerModalVisible, setRegisterModalVisible] = useState(false);
   const [activeModal, setActiveModal] = useState('register');
+  const [activeUser, setActiveUser] = useState();
 
   return (
     <Context.Provider
       value={{
-        registerModalVisible,
-        setRegisterModalVisible,
-        activeModal,
-        setActiveModal,
+        registerModalVisible,setRegisterModalVisible,
+        activeModal,setActiveModal,
+        activeUser,setActiveUser
       }}>
       <NavigationContainer>
         <Stack.Navigator

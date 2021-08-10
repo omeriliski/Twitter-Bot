@@ -25,9 +25,11 @@ const LoginSchema = Yup.object().shape({
 const Login = props => {
   const consumer = useContext(Context);
   
-  const getProfile = ()=>{
+  const getProfile = async ()=>{
       console.log("get profile");
-      const response = privateFetchData("http://192.168.0.123:5000/api/user/profile");
+      const response = await privateFetchData("http://192.168.0.123:5000/api/user/profile");
+      consumer.setActiveUser(response);
+      console.log(response.userEmail);
   }
 
   const login = async values => {

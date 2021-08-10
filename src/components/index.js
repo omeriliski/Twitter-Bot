@@ -1,9 +1,7 @@
 /* eslint-disable prettier/prettier */
-import FollowSlider from './FollowSlider';
+import Sliders from './Sliders';
 import Keys  from './Keys';
-import LikeSlider from './LikeSlider';
 import PopularAccountsList from './PopularAccountsList';
-import RtSlider from './RtSlider';
 import Header from './Header';
 
-export {FollowSlider,Keys, LikeSlider, PopularAccountsList, RtSlider, Header};
+export {Sliders, Keys, PopularAccountsList, Header};

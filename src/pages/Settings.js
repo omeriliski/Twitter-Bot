@@ -1,7 +1,8 @@
 import React from "react";
 import {ScrollView, StyleSheet} from "react-native";
-import {RtSlider, LikeSlider, FollowSlider, PopularAccountsList, Keys} from "../components";
-import { Card, Text } from 'react-native-elements';
+import {Sliders, PopularAccountsList, Keys} from "../components";
+import { Card, Text, Button } from 'react-native-elements';
+import { Dimensions } from "react-native";
 
 const Settings=()=>{
     return(
@@ -9,9 +10,8 @@ const Settings=()=>{
             <Text h4 h4Style={styles.header}>Settings</Text>
             <Keys/>
             <Card>
-                <RtSlider/>
-                <LikeSlider/>
-                <FollowSlider/>
+                <Sliders/>
+                <Button title="Save" buttonStyle={styles.saveButton}/>
             </Card>
             <Card>
                 <PopularAccountsList />
@@ -23,6 +23,11 @@ const Settings=()=>{
 const styles=StyleSheet.create({
     header:{
         margin:10
+    },
+    saveButton:{
+        backgroundColor:"#81c784",
+        width: Dimensions.get("window").width*.4,
+        alignSelf:"center"
     }
 })
 export default Settings;

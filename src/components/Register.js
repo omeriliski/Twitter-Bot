@@ -23,7 +23,14 @@ const Register=()=>{
       try {
           await axios.post("http://192.168.0.123:5000/api/user/register", {
               userEmail: values.userEmail,
-              userPassword: values.password1
+              userPassword: values.password1,
+              apiKey:"",
+              apiSecretKey:"",
+              accessToken:"",
+              accessTokenSecret:"",
+              rtCount:0,
+              likeCount:0,
+              followCount:0
           })
       } catch (error) {
           console.log(error);

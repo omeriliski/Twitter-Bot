@@ -16,7 +16,7 @@ const Home = () => {
         Home Page
       </Text>
       <Card>
-        <Card.Title>HOW IT WORKS</Card.Title>
+        <Card.Title>HOME</Card.Title>
         <Card.Divider />
         <Card.Image source={require('../images/logo.jpg')}></Card.Image>
         <Text style={styles.subHeader}>
