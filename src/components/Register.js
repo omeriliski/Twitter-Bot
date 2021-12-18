@@ -21,7 +21,7 @@ const Register=()=>{
 
     const register = async (values) => {
       try {
-          await axios.post("http://192.168.0.123:5000/api/user/register", {
+          await axios.post(`http://192.168.0.123:${consumer.port}/api/user/register`, {
               userEmail: values.userEmail,
               userPassword: values.password1,
               apiKey:"",

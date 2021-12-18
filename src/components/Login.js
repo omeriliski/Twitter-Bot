@@ -9,10 +9,10 @@ import { Context } from '../App';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Input, Button, Text } from 'react-native-elements';
 import { Formik } from 'formik';
-import { privateFetchData } from '../helper/fetchData';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import axios from 'axios';
 import * as Yup from "yup";
+import { privateFetchData } from '../helper/fetchData';
 
 
 const LoginSchema = Yup.object().shape({
@@ -25,16 +25,16 @@ const LoginSchema = Yup.object().shape({
 const Login = props => {
   const consumer = useContext(Context);
   
-  const getProfile = async ()=>{
-      console.log("get profile");
-      const response = await privateFetchData("http://192.168.0.123:5000/api/user/profile");
-      consumer.setActiveUser(response);
-      console.log(response.userEmail);
+  const getUserData = async () => {
+    console.log("*********************get profile started *****************************");
+    const userData = await privateFetchData(`http://192.168.0.123:${consumer.port}/api/user/profile`);
+    consumer.setActiveUser(userData);
+    console.log("userData!!!!!!!!!!!!!!!!!!!!!!",userData);
   }
 
   const login = async values => {
     await axios
-      .post("http://192.168.0.123:5000/api/user/login", values)
+      .post(`http://192.168.0.123:${consumer.port}/api/user/login`, values)
       .then(response => {
         //consumer.setCurrentUser(values);
         //tele kaydet
@@ -45,8 +45,9 @@ const Login = props => {
         }catch(e){
           console.log("AsyncStorage Error:!!!!!!!!11 ",e)
         }
+        //console.log(response.data);
+        getUserData();
       })
-      .then(getProfile)
       .catch(err => {
         //console.log("values", values)
         console.log('Wrong password or username', err);

@@ -3,19 +3,20 @@ import {View, StyleSheet} from "react-native";
 import { Button, Input, Card,Text } from 'react-native-elements';
 import { Formik } from 'formik';
 import { Context } from '../App';
-import axios from 'axios';
 import {privatePostData} from "../helper/postData";
+
 
 const Keys=()=>{
     const consumer = useContext(Context);
+
     const setKeys=async(values)=>{
-        console.log("consumer.activeUser",consumer.activeUser.apiKey);
+        //console.log("consumer.activeUser",consumer.activeUser.apiKey);
         consumer.activeUser.apiKey = values.apiKey;
         consumer.activeUser.apiSecretKey = values.apiSecretKey;
         consumer.activeUser.accessToken = values.accessToken;
         consumer.activeUser.accessTokenSecret = values.accessTokenSecret;
         console.log("consumer.activeUser",consumer.activeUser);
-        await privatePostData(`http://192.168.0.123:5000/api/user/${consumer?.activeUser._id}/update_user`, consumer.activeUser)
+        await privatePostData(`http://192.168.0.123:${consumer.port}/api/user/${consumer?.activeUser._id}/update_user`, consumer.activeUser)
         .then(response => {
             console.log("Keys Saved", response.data)
         })
@@ -28,7 +29,12 @@ const Keys=()=>{
 
     return(
         <Formik 
-            initialValues={{ apiKey: '', apiSecretKey: '',accessToken:'',accessTokenSecret:''}}
+            initialValues={{ 
+                apiKey:consumer?.activeUser?.apiKey, 
+                apiSecretKey: consumer?.activeUser?.apiSecretKey,
+                accessToken:consumer?.activeUser?.accessToken,
+                accessTokenSecret:consumer?.activeUser?.accessTokenSecret
+            }}
         >
         {formikProps => (
         <Card>

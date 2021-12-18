@@ -14,12 +14,12 @@ export const fetchData = async (path) => {
 
 export const privateFetchData = async (path) => {
     const token = await AsyncStorage.getItem('token');
-    console.log("token!!!!!!!!!",token);
+    //console.log("token!!!!!!!!!",token);
     const response = await axios.get(`${path}`, {
       headers: {
         token,
       },
     });
-    console.log("response!!!!!!!",response?.data);
+    //console.log("response!!!!!!!",response?.data);
     return response?.data;
   };

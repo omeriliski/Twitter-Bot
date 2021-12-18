@@ -36,7 +36,7 @@ const How = () => {
         <Card.Divider />
         <Text>
           2- If you want you can choose the people, who you want to follow, when
-          they tweetted something, you will tweet it automaticly too.
+          they tweeted something, you will tweet it automatically too.
         </Text>
         <Card.Divider />
         <Text>
