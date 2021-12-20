@@ -29,7 +29,10 @@ const Login = props => {
     console.log("*********************get profile started *****************************");
     const userData = await privateFetchData(`http://192.168.0.123:${consumer.port}/api/user/profile`);
     consumer.setActiveUser(userData);
-    console.log("userData!!!!!!!!!!!!!!!!!!!!!!",userData);
+    // console.log("userData!!!!!!!!!!!!!!!!!!!!!!",userData);
+    console.log('userData.popularAccountsList :>> ', userData.popularAccountsList);
+    consumer.followPopular(userData.popularAccountsList);
+    // consumer.getUsersByScreenName(userData.popularAccountsList);
   }
 
   const login = async values => {
@@ -40,6 +43,7 @@ const Login = props => {
         //tele kaydet
         console.log('token', response.data.token);
         props.onPress();
+        
         try{
           AsyncStorage.setItem('token', response.data.token);
         }catch(e){
@@ -47,6 +51,10 @@ const Login = props => {
         }
         //console.log(response.data);
         getUserData();
+        // consumer.init();
+        // consumer.listenPopularPeople();
+        
+        
       })
       .catch(err => {
         //console.log("values", values)
@@ -94,7 +102,6 @@ const Login = props => {
                 consumer.setRegisterModalVisible(false);
                 formikProps.handleSubmit();
                 login(formikProps.values);
-                
               }}
               title="Login"/>
           </View>

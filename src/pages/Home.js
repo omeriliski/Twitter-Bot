@@ -1,6 +1,8 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import {View, StyleSheet, ScrollView} from 'react-native';
-import {Card, Text, ListItem, Avatar} from 'react-native-elements';
+import {Card, Text, ListItem, Avatar, ThemeConsumer} from 'react-native-elements';
+import { Button } from 'react-native-elements/dist/buttons/Button';
+import { Context } from '../App';
 
 const comments = [{
     username: '@AKurucan',
@@ -10,11 +12,13 @@ const comments = [{
   },
 ];
 const Home = () => {
+  const consumer=useContext(Context);
   return (
     <ScrollView>
       <Text h4 h4Style={styles.header}>
         Home Page
       </Text>
+      {/* <Button onPress={()=>consumer.twit("test")} title="test" style={styles.testButton}/> */}
       <Card>
         <Card.Title>HOME</Card.Title>
         <Card.Divider />
@@ -58,6 +62,10 @@ const Home = () => {
 };
 
 const styles = StyleSheet.create({
+  testButton:{
+    width:100,
+    height:10
+  },
   header: {
     margin: 10,
   },

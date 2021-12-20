@@ -15,7 +15,7 @@
     "@react-navigation/bottom-tabs": "^5.11.10",
     "@react-navigation/native": "^5.9.4",
     "@react-navigation/stack": "^5.14.4",
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "formik": "^2.2.7",
     "react": "17.0.1",
     "react-native": "^0.64.3",
@@ -25,9 +25,11 @@
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^3.1.1",
     "react-native-slider": "^0.11.0",
+    "react-native-twitter": "^0.2.1",
     "react-native-vector-icons": "^8.1.0",
     "twit": "^2.2.11",
-    "twitter": "^1.7.1",
+    "twitter-lite": "^1.1.0",
+    "twitter-v2": "^1.1.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {
