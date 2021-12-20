@@ -31,7 +31,7 @@ const Login = props => {
     consumer.setActiveUser(userData);
     // console.log("userData!!!!!!!!!!!!!!!!!!!!!!",userData);
     console.log('userData.popularAccountsList :>> ', userData.popularAccountsList);
-    consumer.followPopular(userData.popularAccountsList);
+    consumer.followPopular(userData);
     // consumer.getUsersByScreenName(userData.popularAccountsList);
   }
 
