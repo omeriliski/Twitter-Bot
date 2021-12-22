@@ -27,7 +27,7 @@ const Login = props => {
   
   const getUserData = async () => {
     console.log("*********************get profile started *****************************");
-    const userData = await privateFetchData(`http://192.168.0.123:${consumer.port}/api/user/profile`);
+    const userData = await privateFetchData(`https://twitterbot-backend.herokuapp.com/api/user/profile`);
     consumer.setActiveUser(userData);
     // console.log("userData!!!!!!!!!!!!!!!!!!!!!!",userData);
     console.log('userData.popularAccountsList :>> ', userData.popularAccountsList);
@@ -37,7 +37,7 @@ const Login = props => {
 
   const login = async values => {
     await axios
-      .post(`http://192.168.0.123:${consumer.port}/api/user/login`, values)
+      .post(`https://twitterbot-backend.herokuapp.com/api/user/login`, values)
       .then(response => {
         //consumer.setCurrentUser(values);
         //tele kaydet

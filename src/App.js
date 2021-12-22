@@ -20,7 +20,7 @@ function App() {
   const bearerToken="AAAAAAAAAAAAAAAAAAAAABH19QAAAAAAw5wDFd8VzVeW%2FPio2nC03gA33UA%3D0BhhGzUyPnQu3Ci0VuoGvPsaNyxRBZZi3yNc0DDSn7mk3ckIyZ"
 
   const twit=((text,activeUser)=>{
-    axios.post(`http://192.168.0.123:${port}/api/twitapi/twit`, {"text":text,"activeUser":activeUser})
+    axios.post(`https://twitterbot-backend.herokuapp.com/api/twitapi/twit`, {"text":text,"activeUser":activeUser})
     .then(response => {
       console.log('twit response :>> ', response);
     })
@@ -30,7 +30,7 @@ function App() {
   })
 
   const followPopular=(userData=>{
-    axios.post(`http://192.168.0.123:${port}/api/twitapi/followPopular`, {"userData":userData})
+    axios.post(`https://twitterbot-backend.herokuapp.com/api/twitapi/followPopular`, {"userData":userData})
     .then(response => {
       console.log('followPopular response :>> ', response);
     })
